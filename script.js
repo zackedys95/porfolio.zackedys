@@ -1,20 +1,5 @@
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-
-menuToggle.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-  menuToggle.textContent = isOpen ? "×" : "☰";
-});
-
-document.querySelectorAll(".nav-links a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open navigation");
-    menuToggle.textContent = "☰";
-  });
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
+const menuBtn=document.getElementById('menuBtn');const navMenu=document.getElementById('navMenu');
+menuBtn.addEventListener('click',()=>{const open=navMenu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'×':'☰';});
+document.querySelectorAll('.nav-menu a').forEach(a=>a.addEventListener('click',()=>{navMenu.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const n=document.getElementById('senderName').value.trim();const em=document.getElementById('senderEmail').value.trim();const m=document.getElementById('message').value.trim();const s=encodeURIComponent('Portfolio inquiry from '+n);const b=encodeURIComponent('Name: '+n+'\nEmail: '+em+'\n\n'+m);location.href='mailto:rhubayno@gmail.com?subject='+s+'&body='+b;});
