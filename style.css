@@ -36,3 +36,42 @@
 
 .featured-project{border:2px solid #e8b923;box-shadow:0 12px 32px rgba(15,23,42,.12)}
 .featured-project .project-type{color:#a87500;font-weight:800}
+
+
+/* Grouped BAYNTEDOS project */
+.bayntedos-combined{border:2px solid #e8b923;box-shadow:0 12px 32px rgba(15,23,42,.12)}
+.bayntedos-feature-media{height:390px;background:#321f15}
+.bayntedos-feature-media img{object-fit:contain;background:#321f15}
+.bayntedos-feature-media .media-tag{position:absolute;left:16px;top:16px;padding:8px 11px;border-radius:30px;background:#f4c542;color:#25170f;font-size:9px;font-weight:900;letter-spacing:1px}
+.bayntedos-gallery{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:10px;margin:16px 0}
+.bayntedos-gallery a{display:block;position:relative;min-width:0;border:1px solid #e5eaf1;border-radius:9px;overflow:hidden;background:#f4f6f8;text-decoration:none}
+.bayntedos-gallery img{display:block;width:100%;height:145px;object-fit:contain;background:#f3f3f3}
+.bayntedos-gallery span{display:block;padding:9px 8px;color:#17233a;font-size:10px;font-weight:800;text-align:center}
+.bayntedos-gallery a:hover{border-color:#d6a51e;transform:translateY(-2px)}
+
+/* One featured video with selectable small previews */
+.video-gallery-card{grid-column:1/-1}
+.video-gallery-heading{padding-bottom:10px}
+.video-showcase{padding:0 20px 18px}
+.video-featured{height:clamp(280px,55vw,620px);max-height:620px;display:flex;align-items:center;justify-content:center;background:#070d19;border-radius:12px;overflow:hidden}
+.video-featured video{display:block;width:100%;height:100%;object-fit:contain;background:#070d19}
+.video-featured-caption{display:grid;gap:5px;padding:13px 2px 15px}
+.video-featured-caption strong{font-size:14px;color:#101b31}
+.video-featured-caption span{font-size:11px;line-height:1.6;color:#718096}
+.video-picker{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.video-thumb{padding:0;border:2px solid #e2e8f0;border-radius:9px;overflow:hidden;background:#fff;text-align:left;cursor:pointer;min-width:0}
+.video-thumb img{display:block;width:100%;height:105px;object-fit:cover;background:#0b1220}
+.video-thumb span{display:block;padding:8px;font-size:10px;font-weight:800;color:#1a2942;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.video-thumb:hover,.video-thumb.active{border-color:#587fc2;box-shadow:0 0 0 2px #587fc222}
+.video-thumb.active span{color:#345f9e}
+.video-tools{padding-top:0}
+@media(max-width:700px){
+  .bayntedos-feature-media{height:280px}
+  .bayntedos-gallery{grid-template-columns:1fr 1fr}
+  .bayntedos-gallery a:first-child{grid-column:1/-1}
+  .bayntedos-gallery img{height:125px}
+  .video-showcase{padding:0 12px 14px}
+  .video-featured{height:360px}
+  .video-picker{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .video-thumb img{height:82px}
+}
